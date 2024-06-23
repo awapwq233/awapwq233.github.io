@@ -3,6 +3,7 @@ title: 时之梦
 date: 2023-07-04 00:00:00 +0800
 categories: [Time]
 tags: [Time]     # TAG names should always be lowercase
+math: true
 ---
 
 我好像做了一个梦。

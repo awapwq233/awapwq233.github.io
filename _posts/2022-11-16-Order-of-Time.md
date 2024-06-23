@@ -3,6 +3,7 @@ title: 时之序
 date: 2022-11-16 00:00:00 +0800
 categories: [Time]
 tags: [Time]     # TAG names should always be lowercase
+math: true
 ---
 
 我需要*一个*时间来平复我的心绪。即使是坐在教室里，我也依然保持着那种喜悦。喜悦之中，我不免对“情绪”产生了困惑。是那种可以改变行为的东西吗？不，浅层的行为可以改变，深层的思想不能改变。而情绪的衰退需要时间。这正需要*一个*时间来使我回归正常心智的 $\texttt{Pure Memory}$。
