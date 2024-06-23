@@ -44,7 +44,7 @@ math: true
 >
 > $\color{SkyBlue}\texttt{To be, With you, Again.}$
 > 
-> $\color{White}\texttt{(I'll make it.)}$
+> $\color{Lavender}\texttt{(I'll make it.)}$
 > 
 
 妈的。我是真的不会描绘这种场景啊。我扔下笔。
@@ -67,37 +67,22 @@ math: true
 
 End.
 
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
-
 &nbsp;
-
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
 ~~End.~~
 
