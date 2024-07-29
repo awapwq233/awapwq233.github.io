@@ -21,6 +21,7 @@ math: true
 $n \leq 35$
 
 爆搜 $2^{35} \approx 3e10$ 爆炸
+
 mim $2\times 2^{18} \approx 5e5$ 拿下
 
 取 $mid\gets n/2$，从两边枚举状态（位运算）
@@ -42,6 +43,7 @@ __[另解] 高斯消元__
 $n \leq 39$
 
 爆搜 $2^{39}\approx 5e11$ 爆炸
+
 mim $2\times 2^{20}\approx 2e6$ 拿下
 
 取 $mid=n/2$ ，从两边枚举拿/不拿，存总和为 $k$ 时能够达到的方案数
