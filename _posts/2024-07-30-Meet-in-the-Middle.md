@@ -6,8 +6,6 @@ tags: [搜索]     # TAG names should always be lowercase
 math: true
 ---
 
-## 折半搜索(Meet in the Middle)
-
 当 $n$ 不太大，又不能直接爆搜的情况下，我们使用 meet in the middle 的搜索技巧。
 
 过程是，取一个 $mid$，对前后两端分别搜索，如果两端的结果拼接后满足题意，则可以计入答案。
