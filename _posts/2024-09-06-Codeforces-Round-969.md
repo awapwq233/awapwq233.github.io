@@ -22,7 +22,6 @@ math: true
 Code
 
 ```cpp
-
 ans = (r - l + 1 + (l & 1)) / 4;
 ```
 
