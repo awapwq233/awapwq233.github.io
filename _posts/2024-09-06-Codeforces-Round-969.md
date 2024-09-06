@@ -143,7 +143,7 @@ void mian()
     else if(s == 1)
         write('\n', a0 + (unk_leaf + 1) / 2);
     else
-        write('\n', qmax(a1, a0) + (unk_leaf + (unk_else % 2 && a1 == a0) / 2))
+        write('\n', qmax(a1, a0) + (unk_leaf + (unk_else % 2 && a1 == a0) / 2));
 }
 
 ```
