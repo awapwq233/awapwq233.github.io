@@ -6,7 +6,7 @@
 
 这里暂时用来存放我写的一些文章啦。
 
-Hope you can enjoy it! :D
+Hope you can [enjoy it](https://awapwq233.github.io)! :D
 
 ## License
 
