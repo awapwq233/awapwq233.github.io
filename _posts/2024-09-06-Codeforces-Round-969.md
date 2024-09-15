@@ -104,6 +104,8 @@ void mian()
 
 时间复杂度 $O(n)$。
 
+Code
+
 ```cpp
 int deg[maxn];
 void mian()
