@@ -118,7 +118,55 @@ signed main()
 }
 ```
 
-### 0x03 [P1826 猴子选大王数据再加强版](https://www.luogu.com.cn/problem/P7928) 
+### 0x03 [$\text{\color{#52c41a}P1826}$ 猴子选大王数据再加强版](https://www.luogu.com.cn/problem/P1826) 
 
 题意：约瑟夫问题，每次数到 $m$ 淘汰猴子，求 $n=a,a+1, \cdots ,b$ 时哪只猴子成为获胜者的次数多。
+
+dp 的前提是最优子问题，那么 $n$ 的情况能否从 $n-1$ 转移过来？
+
+注意到把第一个人杀了就是 $n-1$ 的情况了，那么答案由此转移。也就是说，第 $m+1$ 个猴子会成为 $n-1$ 情况中的第一个猴子。
+
+边界条件：$f_0 = 1$。这里把第一个人看做第 $0$ 个人，方便取模。
+
+转移方程：
+
+$$f_i = (m + f_{i-1}) \bmod n$$
+
+最后用一个桶把结果装起来即可。
+
+Code
+
+```cpp
+int f[maxm], t[maxm];
+signed main()
+{
+    int a, b, m;
+    read(a, b, m);
+    f[1] = 0;
+    F(i, 2, b)
+        f[i] = (m + f[i - 1]) % i;
+    F(i, a, b)
+        t[f[i] + 1] ++;
+    int maxx = 0;
+    vector<int> x;
+    F(i, 1, b)
+    {
+        if(t[i] > maxx)
+            maxx = t[i],
+            x.clear(),
+            x.push_back(i);
+        else if(t[i] == maxx)
+            x.push_back(i);
+    }
+    write('\n', maxx);
+    for(auto i : x)
+        write(' ', i);
+    return 0;
+}
+```
+
+### 0x04 [$\text{CF2005C}$ Lazy Narek](https://codeforces.com/contest/2005/problem/C) 
+
+见 [Codeforces Round 972 (Div. 2)](https://awapwq233.github.io/posts/Codeforces-Round-972/#c-lazy-narek)。
+
 
