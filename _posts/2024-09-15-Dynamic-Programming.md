@@ -118,7 +118,7 @@ signed main()
 }
 ```
 
-### 0x03 [$\text{\color{#52c41a}P1826}$ 猴子选大王数据再加强版](https://www.luogu.com.cn/problem/P1826) 
+### 0x03 [$\text{P1826}$ 猴子选大王数据再加强版](https://www.luogu.com.cn/problem/P1826) 
 
 题意：约瑟夫问题，每次数到 $m$ 淘汰猴子，求 $n=a,a+1, \cdots ,b$ 时哪只猴子成为获胜者的次数多。
 
