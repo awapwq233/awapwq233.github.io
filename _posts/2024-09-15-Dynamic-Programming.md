@@ -169,4 +169,72 @@ signed main()
 
 见 [Codeforces Round 972 (Div. 2)](https://awapwq233.github.io/posts/Codeforces-Round-972/#c-lazy-narek)。
 
+### 0x05 [$P2519 Problem A](https://www.luogu.com.cn/problem/P2519) 
 
+题意：一次考试有 $n$ 个人，第 $i$ 个人说有 $a_i$ 个人的分数**严格**大于我，$b_i$ 个人的分数**严格**小于我，求最少有几个人没说真话。
+
+注意到和我分数相等的人有 $n-a_i-b_i$ 个。**将这些排名放到数轴上**，令 $l_i = a_i + 1, r_i = n - b_i$，则我的名次在 $[l_i,r_i]$ 这个区间中。
+
+试着从一些必假的话开始呢？
+
+1. $l_i>r_i$。这等价于 $n-a_i-b_i < 1$，显然必假。
+2. 对于 $[l_i,r_i]$ 相同的人，最多只有 $r_i - l_i + 1$ 个人说了真话。
+
+顺着「排名数轴」这个思路继续往下想，把 $l,r$ 相同的人合并到一起，定义这个区间的价值 $v_i$ 为这样的人数，那么问题就转化为了，对于 $m$ 个区间 $[l_i,r_i]$，价值为 $v_i$，取出若干个没有交集的区间最大化价值之和。
+
+这样就可以背包 dp 了。转移到第 $i$ 个区间时，要么不选，要么选，但要找到使得 $r_k$ 最大的 $k$ 使得 $r_k < l_i$，保证了没有交集。于是对于 $r$ 为第一关键字排序，保证 $r_i$ 单调递增就可以二分查找了；而 $f_i$ 是不减的，找到这样最大的 $k$ 就保证了 $f_i$ 的最优。
+
+转移方程：
+
+$$f_i=\max\left\{f_{i-1}, f_k + v_i\right\}$$
+
+注意边界：$f_1=v_1$。$i=1$ 时肯定选了最优嘛。
+
+注意这样求出来的是说真话的人数，最终答案是 $n-f_m$。
+
+Code
+
+```cpp
+int n, m, f[maxn];
+struct Node
+{
+    int l, r, v;
+} s[maxn], t[maxn];
+bool cmp1(Node &x, Node &y) {return x.l == y.l ? x.r < y.r : x.l < y.l;}
+bool cmp2(Node &x, Node &y) {return x.r == y.r ? x.l < y.l : x.r < y.r;}
+int findk(int l, int r, int L)
+{
+    while(l < r)
+    {
+        int mid = l + r >> 1;
+        if(t[mid].r < L) l = mid + 1;
+        else             r = mid - 1;
+    }
+    return r;
+}
+int main()
+{
+    read(n);
+    F(i, 1, n)
+    {
+        s[i].l = readint() + 1;
+        s[i].r = n - readint();
+    }
+    sort(s + 1, s + n + 1, cmp1);
+    F(i, 1, n)
+    {
+        if(s[i].l > s[i].r)
+            continue;
+        if(s[i].l != t[m].l || s[i].r != t[m].r)
+            t[++ m] = s[i], t[m].v = 1;
+        else if(t[m].v < s[i].r - s[i].l + 1)
+            t[m].v ++;
+    }
+    sort(t + 1, t + m + 1, cmp2);
+    f[1] = t[1].v;
+    F(i, 2, m)
+        f[i] = qmax(f[i - 1], f[findk(1, i - 1, t[i].l)] + t[i].v);
+    write('\n', n - f[m]);
+    return 0;
+}
+```
