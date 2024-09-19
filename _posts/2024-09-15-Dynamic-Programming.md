@@ -169,7 +169,7 @@ signed main()
 
 见 [Codeforces Round 972 (Div. 2)](https://awapwq233.github.io/posts/Codeforces-Round-972/#c-lazy-narek)。
 
-### 0x05 [$P2519 Problem A](https://www.luogu.com.cn/problem/P2519) 
+### 0x05 [P2519 Problem A](https://www.luogu.com.cn/problem/P2519) 
 
 题意：一次考试有 $n$ 个人，第 $i$ 个人说有 $a_i$ 个人的分数**严格**大于我，$b_i$ 个人的分数**严格**小于我，求最少有几个人没说真话。
 
