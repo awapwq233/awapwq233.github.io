@@ -6,6 +6,8 @@ tags: [Codeforces, dp]
 math: true
 ---
 
+[比赛传送门](https://codeforces.com/contest/2005)
+
 ### A. Simple Palindrome
 
 题意：构造一个长度为 $n$ 仅含 `aeiou` 的字符串，最小化回文子串的数量。

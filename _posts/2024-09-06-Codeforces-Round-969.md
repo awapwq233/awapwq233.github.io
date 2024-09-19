@@ -6,6 +6,7 @@ tags: [Codeforces]
 math: true
 ---
 
+[比赛传送门](https://codeforces.com/contest/2006)
 
 ### A. Dora's Set
 
