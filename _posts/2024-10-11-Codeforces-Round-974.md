@@ -178,7 +178,7 @@ void mian()
 }
 ```
 
-### F. 
+### H. Robin Hood Archery
 
 题意：给定一个序列，$q$ 次询问，每次给定 $l,r$，问 $[l,r]$ 的元素是否都出现了偶数次。$n,q\leq 2\times 10^5$。
 
