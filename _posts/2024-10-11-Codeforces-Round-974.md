@@ -1,6 +1,6 @@
 ---
 title: Codeforces Round 974 (Div. 3) 
-date: 2024-10-11 12:00:00 +0800
+date: 2024-10-11 00:00:00 +0800
 categories: [OI]
 tags: [Codeforces, dp, Xor-Harshing]
 math: true
