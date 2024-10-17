@@ -238,3 +238,186 @@ int main()
     return 0;
 }
 ```
+### 0x06 [P6820 Two Cakes](https://www.luogu.com.cn/problem/P6820)
+
+题意：两个长为 $n$ 的排列 A 和 B，同时从左往右写，一个时间内不能同时写相同的数，最小化总用时并输出。$n \leq 10^6$。
+
+不可能贪心，直接朴素 dp：设 $f_{i,j}$ 为 A 写完第 $i\sim n$ 位，B 写完第 $j\sim n$ 位的最小用时，显然有转移方程
+
+$$f_{i,j} = \begin{cases}f_{i+1,j+1}+1\quad a_i \neq b_j\\\min\left\{f_{i+1,j}, f_{i,j+1}\right\}+1\quad a_i=b_j\end{cases}$$
+
+显然的，这样的时间复杂度是 $O(n^2)$ 的，必然超时；所以考虑优化。
+
+注意到，占时间复杂度的大头是第一种情况，第二种情况只会出现 $n$ 次（记忆化搜索即可），不是主要优化对象，那么我们考虑能否优化第一种情况？
+
+具体的，我们发现可以找到这样的 $k$，使得 $\forall p \in [i, i + k], q\in [j, j + k]$，有 $ a_p \neq b_q$，这样便可以连续按第一种情况转移 $k$ 次，大大优化了时间复杂度。
+
+于是我们可以记录 $a_i=b_j$ 时下标的差，即 $i-j$，放进 `vector` 后排序序号，转移时二分查找即可找到满足条件的 $k$，总时间复杂度 $O(n\log n)$。
+
+Code
+```cpp
+int n, a[maxm], b[maxm], pos[maxm], dp[maxm];
+vector<int> v[maxm << 1];
+int f(int x, int y)
+{
+    if(x > n) return n - y + 1;
+    if(y > n) return n - x + 1;
+    if(a[x] == b[y])
+        return dp[x] != -1 ? dp[x] : dp[x] = qmin(f(x + 1, y), f(x, y + 1)) + 1;
+    int t = n + x - y;
+    int pos = lower_bound(v[t].begin(), v[t].end(), x) - v[t].begin();
+    if(pos > int(v[t].size()) - 1)
+        return qmax(n - x + 1, n - y + 1);
+    int k = v[t][pos];
+    return f(k, y - x + k) + k - x;
+}
+signed main()
+{
+    memset(dp, -1, sizeof(dp));
+    F(i, 1, n = readint()) 
+        pos[a[i] = readint()] = i;
+    F(i, 1, n) 
+        v[n + pos[b[i] = readint()] - i].push_back(pos[b[i]]);
+    F(i, 1, n << 1)
+        sort(v[i].begin(), v[i].end());
+    write(f(1, 1));
+    return 0;
+}
+```
+
+### 0x07 [P3478 STA-Station](https://www.luogu.com.cn/problem/P3478) 
+
+题意：给定一个 $n$ 个点的树，请求出一个结点，使得以这个结点为根时，所有结点的深度之和最大。$n\leq 10^6$。
+
+考虑树状 dp。对于 $1$ 为根节点的树，求它的节点深度和是 $O(n)$ 的。考虑向其他节点转移。
+
+设当前节点为 $v$，父亲为 $u$，则 $v$ 子树内（包含 $u$）的部分的深度 $-1$，其他部分的深度 $+1$ 。总的来说$\Delta f=-\operatorname{size} u+(n-\operatorname{size} u)$
+
+那么转移方程就是
+
+$$f_v=f_u +n- 2\operatorname{size} u$$
+
+$\operatorname{size} u$ 可以 $O(n)$ 预处理出来。转移也是 $O(n)$ 的，因而总时间复杂度为 $O(n)$。
+
+Code
+
+```cpp
+int fa[maxm], dep[maxm], sz[maxm], f[maxm];
+void dfs1(int u, int fat)
+{
+    f[1] += dep[u] = dep[fat] + 1; sz[u] = 1; fa[u] = fat;
+    for(int i = head[u]; i; i = e[i].nxt)
+    {
+        int v = e[i].v;
+        if(v == fat) continue;
+        dfs1(v, u);
+        sz[u] += sz[v];
+    }
+}
+void dfs2(int u, int fat)
+{
+    if(u != 1) f[u] = f[fat] - sz[u] + n - sz[u];
+    for(int i = head[u]; i; i = e[i].nxt)
+    {
+        int v = e[i].v;
+        if(v == fat) continue;
+        dfs2(v, u);
+    }
+}
+struct Ans
+{
+    int i, f;
+    bool operator>(const Ans &ano) const {return f > ano.f;}
+} ans;
+signed main()
+{
+    read(n);
+    F(i, 1, n - 1)
+    {
+        int u, v; read(u, v);
+        addedge(u, v); addedge(v, u);
+    }
+    dfs1(1, 0); dfs2(1, 0);
+    ans = {1, f[1]};
+    F(i, 2, n)
+        eqmax(ans, {i, f[i]});
+    write('\n', ans.i);
+    return 0;
+}
+```
+### 0x08 [P6820 Two Cakes](https://www.luogu.com.cn/problem/P6820)
+
+题意：一个以 $1$ 为根节点、大小为 $n$ 的树，断开若干条边使得分割后存在一个大小为 $p$ 的子树，最小化断边的次数。$p\leq n\leq 150$。
+
+最暴力的想法是对于一个节点，记录每条向叶子结点的边切不切，这样显然太麻烦了。
+
+考虑抽象化这个过程，我要得到 $k$ 的子树，要找到一个构造方案使 $\sum k_v=k$，最小化 $\sum f$。经验告诉我们，这就是背包 dp。
+
+复习一下，背包 dp 是，对于前 $i$ 个东西，容量为 $v$ 时背包的最大价值；换算到这道题就是，到 $u$ 这个节点有 $u \to v_i$，对于前 $i$ 个叶节点，剩下的节点数为 $j$ 时断边的最小数目。于是可以设 $f_{u,i,j}$，显然有转移方程
+
+1. 我不用 $v$ 的节点，要断掉 $u\to v$ 这条边，答案 $+1$。
+
+$$ f_{u,i,j} = f_{u, i - 1, j} + 1 $$
+
+2. 我用 $v$ 内 $w$ 的节点，需要断掉的边取最小值。
+
+$$ f_{u,i,j} = \min\limits_{1\leq w \leq \operatorname{size}v}f_{u, i - 1, j-w} + f_{v, \operatorname{leafsize}v, w} $$
+
+仿照背包 dp 的优化，我们可以把第二维滚掉，这是因为
+
+1. $i-1$ 向 $i$ 的转移，后面不会再用到了；
+
+2. 只要我们像背包 dp 倒叙枚举 $v$，访问到的 $v-w<v$ 就一定是之前 $i-1$ 的结果，于是就优化了第二维。
+
+但是，现在还有一些问题。对于滚动数组后的 $f_{u, j}$，我们发现这个 $u$ 点是强制选择的——也就是需要这一个 $u$ 点来链接下面的子节点。所以答案不一定就是 $f_{1, p}$，而应对所有的 $f_{u, p}$ 取 $\max$。但是这样又出现了问题，如果我们选择了一个子节点，我还需要断掉 $fa\to u$ 这条边，所以 $f_{u,p}$ 要 $+1$。
+
+最终答案就是 $\max f_{u,p} + [u\neq1]$。
+
+Code
+
+```cpp
+int n, p;
+struct Edge
+{
+    int v, nxt;
+} e[maxk];
+int head[maxk], cnt;
+void addedge(int u, int v)
+{
+    e[++ cnt] = {v, head[u]};
+    head[u] = cnt;
+}
+int sz[maxk], f[155][155];
+void dfs(int u)
+{
+    f[u][sz[u] = 1] = 0;
+    for(int i = head[u]; i; i = e[i].nxt)
+    {
+        int v = e[i].v;
+        dfs(v);
+        sz[u] += sz[v];
+        UF(s, qmin(sz[u], p), 0)
+        {
+            f[u][s] ++;
+            F(sv, 0, qmin(s - 1, sz[v]))
+                eqmin(f[u][s], f[u][s - sv] + f[v][sv]);
+        }
+    }
+}
+signed main()
+{
+    read(n, p);
+    F(i, 1, n - 1)
+    {
+        int u, v; read(u, v);
+        addedge(u, v);
+    }
+    memset(f, 0x3f, sizeof(f));
+    dfs(1);
+    int ans = inf;
+    F(i, 1, n)
+        eqmin(ans, f[i][p] + (i != 1));
+    write('\n', ans);
+    return 0;
+}
+```
