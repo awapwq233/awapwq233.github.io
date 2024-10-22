@@ -230,7 +230,7 @@ for(int i=1;i<=n;i++)
 
 代价是时间的消耗。如果时间紧迫则不必这样做；反之，如果时间充足或者在进行一个项目，这样做是必要的。
 
-### 0x06 简化的表达
+### 0x06 简化的表达 [★★]
 
 如果你的函数要传入 5 个 `long long` 类型的参数，那你的写法通常会是：
 
@@ -264,7 +264,7 @@ ll f(ll a, ll b, ll c, ll d, ll e);
 
 其他常见的还有 `double -> db`，`pair<int, int> -> pii`，`make_pair(x, y) -> mp(x, y)`，`priority_queue -> pq`，`push_back(x) -> pb(x)` 等等。
 
-### 0x07 常量的使用 [★★]
+### 0x07 常量的使用 [★]
 
 ```
 constexpr double e = exp(1.0);
