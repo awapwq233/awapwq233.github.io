@@ -1,7 +1,7 @@
 ---
 title: Codeforces Round 972 (Div. 2) 
 date: 2024-09-18 00:00:00 +0800
-categories: [OI]
+categories: [Contests]
 tags: [Codeforces, dp]
 math: true
 ---

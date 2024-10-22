@@ -1,7 +1,7 @@
 ---
 title: Codeforces Round 973 (Div. 2) 
 date: 2024-09-30 00:00:00 +0800
-categories: [OI]
+categories: [Contests]
 tags: [Codeforces]
 math: true
 ---

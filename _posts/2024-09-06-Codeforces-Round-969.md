@@ -1,7 +1,7 @@
 ---
 title: Codeforces Round 969 (Div. 1, Div. 2) 
 date: 2024-09-06 18:30:00 +0800
-categories: [OI]
+categories: [Contests]
 tags: [Codeforces]
 math: true
 ---
