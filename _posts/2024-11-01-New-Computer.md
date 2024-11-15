@@ -1,7 +1,7 @@
 ---
 title: 新电脑
 date: 2024-11-01 00:00:00 +0800
-categories: [记录]
+categories: [Memory]
 tags: []
 math: true
 ---
