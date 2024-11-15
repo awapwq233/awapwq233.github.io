@@ -1,7 +1,7 @@
 ---
 title: 折半搜索(Meet in the Middle)
 date: 2023-07-30 01:00:00 +0800
-categories: [OI]
+categories: [Knowledge]
 tags: [搜索]     # TAG names should always be lowercase
 math: true
 ---

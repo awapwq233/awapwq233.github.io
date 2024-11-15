@@ -1,7 +1,7 @@
 ---
 title: Dynamic Programming
 date: 2024-09-15 00:00:00 +0800
-categories: [OI]
+categories: [Knowledge]
 tags: [dp]
 math: true
 ---

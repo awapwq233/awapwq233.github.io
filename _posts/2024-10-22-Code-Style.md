@@ -1,7 +1,7 @@
 ---
 title: 浅谈代码风格
 date: 2024-10-22 17:00:00 +0800
-categories: [OI]
+categories: [Article]
 tags: [Code-Style]
 math: true
 ---
