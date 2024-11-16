@@ -1,6 +1,6 @@
 ---
 title: 类的相关知识点-1
-date: 2024-11-15 00:00:00 +0800
+date: 2024-11-16 00:00:00 +0800
 categories: [Knowledge]
 tags: [Class]
 math: true
