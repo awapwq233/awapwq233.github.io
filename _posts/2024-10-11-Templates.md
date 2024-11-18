@@ -17,6 +17,7 @@ using namespace std;
 #define F(i, a, b) for(int i = a, i##end = b; i <= i##end; ++ i)
 #define UF(i, a, b) for(int i = a, i##end = b; i >= i##end; -- i)
 #define file(x) freopen(x".in", "r", stdin); freopen(x".out", "w", stdout)
+#define optimze ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr)
 typedef long long ll;
 typedef double db;
 
@@ -80,6 +81,7 @@ using namespace std;
 #define F(i, a, b) for(int i = a, i##end = b; i <= i##end; ++ i)
 #define UF(i, a, b) for(int i = a, i##end = b; i >= i##end; -- i)
 #define file(x) freopen(x".in", "r", stdin); freopen(x".out", "w", stdout)
+#define optimze ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr)
 typedef long long ll;
 typedef double db;
 
