@@ -181,7 +181,7 @@ signed main()
             // 还没满足就直接润
             if(l < T)
                 continue;
-            一直删
+            // 一直删
             while(l - T >= v[R[pl]].size() - del[pl])
             {
                 // 注意 Hash 的部分扣除和 del 数组有关
