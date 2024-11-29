@@ -240,4 +240,130 @@ signed main()
 }
 ```
 
+### 1.3 [P5537 系统设计](https://www.luogu.com.cn/problem/P5537)
+
+题意：给定一个 $n$ 个点的有根树，长度为 $m$ 的序列 $a$，实现 $q$ 个操作，
+
+操作分两种：
+
+1. `1 x l r` 表示设定起点为有根树的节点 $x$，接下来依次遍历 $l \sim r$。当遍历到 $i$ 时，从当前节点走向它的编号第 $a_i$ 小的儿子。如果某一时刻当前节点的儿子个数小于 $a_i$，或者已经遍历完 $l \sim r$，则在这个点停住，并输出这个点的编号，同时停止遍历。
+
+2. `2 t k` 表示将序列中第 $t$ 个数 $a_t$ 修改为 $k$。
+
+观察性质：
+
+1. $a$ 序列会改变，但树的形态不会改变
+
+2. 给定的序列固定，其遍历的节点也随之固定
+
+3. 最终有效的（让遍历节点更改的）序列一定是 $l\sim r$ 的一个前缀。且最终答案的前缀序列的任意前缀一定合法，其余前缀不合法。也就是说具有单调性。
+
+4. 从 $u$ 出发到 $v$ 可以看作从根节点出发经过 $u$ 再到 $v$。
+
+于是可以预处理出树上任意遍历前缀。接着用二分 $l\sim r$ 的前缀，并加上 $root\sim x$ 这段路径，看是否在之前的预处理中出现过。那么这个可以用 Hash 进行快速比较。
+
+> 引用自 [lupengheyyds](https://www.luogu.com.cn/user/580608) 的 [题解](https://www.luogu.com.cn/article/3uucnoxc)。
+
+代码没写。
+
 ## 0x02 KMP
+
+KMP 算法是模式串匹配的一种算法，能够将最坏 $O(nm)$ 的时间复杂度优化到 $O(n+m)$。
+
+其中的 `next` 数组具有优美的性质，`next[i]` 表示字符串的前 $i$ 位的**最长** `border` 的长度，`border` 定义为 $s$ 的一个真子串 $t$ 满足 $t$ 既是 $s$ 的前缀又是 $s$ 的后缀。
+
+`border` 的性质：`border` 的 `border`（如果存在）还是 `border`。
+
+### 2.1 [P3375 【模板】KMP](https://www.luogu.com.cn/problem/P3375)
+
+题意：字符串匹配每个位置，并输出每个 `next[i]`。
+
+代码熟练背诵。
+
+```cpp
+char a[maxm], b[maxm];
+int nxt[maxm];
+int main()
+{
+    scanf("%s\n%s", a + 1, b + 1);
+    int al = strlen(a + 1), bl = strlen(b + 1);
+    for(int i = 2, j = 0; i <= bl; i ++)
+    {
+        while(j && b[i] != b[j + 1])
+            j = nxt[j];
+        if(b[i] == b[j + 1])
+            j ++;
+        nxt[i] = j;
+    }
+    for(int i = 1, j = 0; i <= al; i ++)
+    {
+        while(j && a[i] != b[j + 1])
+            j = nxt[j];
+        if(a[i] == b[j + 1])
+            j ++;
+        if(j == bl)
+        {
+            write('\n', i - bl + 1);
+            j = nxt[j];
+        }
+    }
+    F(i, 1, bl)
+        write(' ', nxt[i]);
+    return 0;
+}
+
+```
+
+### 2.2 [P4391 Radio Transmission 无线传输](https://www.luogu.com.cn/problem/P4391)
+
+题意：一个字符串 $s_2$ 自我复制若干次的子串为 $s_1$，给 $s_1$ 求 $s_2$ 的最短长度。
+
+本题考查 KMP 的 `next` 数组的性质。
+
+![](/assets/img-2.png)
+
+红色部分为最长的 `border`。观察绿色部分，由黄箭头所指，这两部分相同；又因为 `border` 是相同的前后缀，所以沿着黄色箭头这些部分都相等。这也就满足了题目中“自我复制”的要求。
+
+最终答案就是 `n - next[n]`。
+
+### 2.3 [P3435 OKR-Periods of Words](https://www.luogu.com.cn/problem/P3435)
+
+题意：规定 $Q$ 是 $s$ 的周期当且仅当 $Q$ 是 $s$ 的真前缀且 $s$ 是 $Q+Q$ 的前缀。求给定字符串所有前缀的最大周期的和。
+
+同样考察 `next` 数组的性质。因为 KMP 算法里最有意思的就是 `next` 数组，花样最多。
+
+分析题意，周期的概念等价于一个真前缀复制后把非前缀部分的**重合**，也就是说这是一个 `border`。为了让周期最大，`border` 要最小才行。又由性质知 `border` 的 `border` 还是 `border`，也就是说可以重复跳 `next` 直到跳到空。
+
+但是这样复杂度会出问题，如果给你 $10^6$ 个 `a`，每次跳 `next` 只会减少 $1$，复杂度是 $O(n^2)$ 的。此时我们可以借鉴并查集路径压缩的思想，暴力跳完之后直接将 `next` 修改为最小的 `border`，这就完成了路径压缩，时间复杂度为 $O(n)$。
+
+要开 `long long`。
+
+```cpp
+int n;
+char s[maxm];
+int nxt[maxm];
+signed main()
+{
+    scanf("%lld\n%s", &n, s + 1);
+    for(int i = 2, j = 0; i <= n; i ++)
+    {
+        while(j && s[i] != s[j + 1])
+            j = nxt[j];
+        if(s[i] == s[j + 1])
+            j ++;
+        nxt[i] = j;
+    }
+    int ans = 0;
+    for(int i = 2, j = 2; i <= n; j = ++ i)
+    {
+        while(nxt[j])
+            j = nxt[j];
+        if(nxt[i])
+            nxt[i] = j;
+        ans += i - j;
+    }
+    write('\n', ans);    
+    return 0;
+}
+
+```
