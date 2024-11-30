@@ -367,3 +367,103 @@ signed main()
 }
 
 ```
+
+### 2.4 [P4824 Censoring S](https://www.luogu.com.cn/problem/P4824)
+
+题意：字符串匹配，匹配到就删除，输出最后结果。
+
+要注意删除的时候，删除前后两段可能拼成目标串造成二次删除。
+
+怎么做呢？考虑开一个栈，栈内存放着保留的下标；匹配完成之后就弹出匹配串的长度，同时 `j` 跳到 `i - len` 当时对应的 `j` 的位置（用数组记录），继续下次匹配。
+
+```cpp
+char s[maxm], t[maxm];
+int nxt[maxm];
+int stk[maxm], top;
+int f[maxm];
+signed main()
+{
+    scanf("%s\n%s", s + 1, t + 1);
+    int sl = strlen(s + 1);
+    int tl = strlen(t + 1);
+    for(int i = 2, j = 0; i <= tl; i ++)
+    {
+        while(j && t[i] != t[j + 1])
+            j = nxt[j];
+        if(t[i] == t[j + 1])
+            j ++;
+        nxt[i] = j;
+    }
+    for(int i = 1, j = 0; i <= sl; i ++)
+    {
+        while(j && s[i] != t[j + 1])
+            j = nxt[j];
+        if(s[i] == t[j + 1])
+            j ++;
+        f[i] = j;
+        stk[++ top] = i;
+        if(j == tl)
+        {
+            top -= tl;
+            j = f[stk[top]];            
+        }
+    }
+    F(i, 1, top)
+        putchar(s[stk[i]]);
+    return 0;
+}
+```
+
+### 2.5 [P2375 [NOI2014] 动物园](https://www.luogu.com.cn/problem/P2375)
+
+题意：定义 `num[i]` 为字符串前 $i$ 位的所有长度不大于 $\frac{i}{2}$ 的 `border` 的个数。求所有的 `num[i]`。
+
+`num[i]` 自然可以通过不断跳 `next` 得到，但是这太不优秀了，考虑如何优化。
+
+你考虑，假定我们拥有一个数组 `f` 记录所有的 `border` 个数（也就是 `num` 数组的弱化版），那当我们暴力跳 `next` 的时候一旦 $j\leq \frac{i}{2}$ 时，`num[i]` 就是 `f[j]` 了。
+
+这个 `f` 可以在求 `next` 数组的时候递推求出，总复杂度是 $O(n)$ 的。
+
+另外，注意到在使用 `f[j]` 的时候 `num[j]` 已经被使用过了，于是这两个数组可以合并，类似滚动数组。
+
+> 插播唐诗笑话一则：我先赋初始值，然后把整个数组初始化了。
+
+```cpp
+char s[maxm];
+int nxt[maxm];
+int num[maxm];
+void mian()
+{
+    int ans = 1;
+    scanf("%s", s + 1);
+    n = strlen(s + 1);
+    memset(nxt, 0, sizeof(nxt));
+    memset(num, 0, sizeof(num));
+    num[1] = 1;
+    for(int i = 2, j = 0; i <= n; i ++)
+    {
+        while(j && s[i] != s[j + 1])
+            j = nxt[j];
+        if(s[i] == s[j + 1])
+            j ++;
+        nxt[i] = j;
+        num[i] = num[j] + 1;
+    }
+    for(int i = 2, j = 0; i <= n; i ++)
+    {
+        while(j && s[i] != s[j + 1])
+            j = nxt[j];
+        if(s[i] == s[j + 1])
+            j ++;
+        while(j > (i >> 1))
+            j = nxt[j];
+        ans = (ans * (num[j] + 1ll)) % mod;     
+    }
+    write('\n', ans);
+}
+```
+
+## 0x03 Manacher
+
+Manacher 是一种求解最长回文串的算法。
+
