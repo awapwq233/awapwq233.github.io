@@ -465,5 +465,127 @@ void mian()
 
 ## 0x03 Manacher
 
-Manacher 是一种求解最长回文串的算法。
+Manacher 是一种求解回文子串的算法。
 
+### 3.1 [【模板】manacher](https://www.luogu.com.cn/problem/P3805)
+
+依然熟练背诵。
+
+```cpp
+constexpr int maxn = 1.1e7 + 10;
+char s[maxn << 1];
+int p[maxn << 1], cnt, ans;
+void input()
+{
+    char ch = getchar();
+    s[0] = '~'; s[cnt = 1] = '|';
+    while(!isalpha(ch)) ch = getchar();
+    while(isalpha(ch)) s[++ cnt] = ch, s[++ cnt] = '|', ch = getchar();
+}
+signed main()
+{
+    input();
+    for(int i = 1, r = 0, mid = 0; i <= cnt; i ++)
+    {
+        if(i <= r)
+            p[i] = qmin(p[mid * 2 - i], r - i + 1);
+        while(s[i - p[i]] == s[i + p[i]])
+            p[i] ++;
+        if(p[i] + i > r)
+            r = p[i] + i - 1, mid = i;
+        eqmax(ans, p[i]);
+    }
+    write('\n', ans - 1);
+    return 0;
+}
+```
+
+> 注意：做隔板字符的字符可以是**任意的**，因为只有可能真值和真值匹配，隔板和隔板匹配。
+
+## 0x04 Trie
+
+把字符上树。为 AC 自动机做铺垫。
+
+### 4.1 [阅读理解](https://www.luogu.com.cn/problem/P3879)
+
+题意：统计每个单词在哪几篇短文中出现过。
+
+用作 Trie 板子题练习。
+
+```cpp
+int n, m, k;
+struct Node
+{
+    char val;
+    int nxt[26];
+    set<int> vis;
+    int findnxt(int x)
+    {
+        return nxt[x - 'a'];
+    }
+    void setnxt(int x, int v)
+    {
+        nxt[x - 'a'] = v;
+    }
+    Node(char v)
+    {
+        val = v;
+        memset(nxt, 0, sizeof(nxt));
+    }
+};
+vector<Node> Trie(1, Node(0));
+
+void build(string &s, int idx)
+{
+    int ptr = 0;
+    F(i, 0, s.length() - 1)
+    {
+        if(!Trie[ptr].findnxt(s[i]))
+        {
+            Trie.push_back(Node(s[i]));
+            Trie[ptr].setnxt(s[i], Trie.size() - 1);
+        }
+        ptr = Trie[ptr].findnxt(s[i]);
+    }
+    Trie[ptr].vis.insert(idx);
+}
+void query(string &s)
+{
+    int ptr = 0;
+    F(i, 0, s.length() - 1)
+    {
+        if(!Trie[ptr].findnxt(s[i]))
+        {
+            cout << endl; 
+            return;
+        }
+        ptr = Trie[ptr].findnxt(s[i]);
+    }
+    for(auto i : Trie[ptr].vis)
+        cout << i << " ";
+    cout << endl;
+}
+signed main()
+{
+    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
+    cin >> n;
+    F(i, 1, n)
+    {
+        cin >> m;
+        F(j, 1, m)
+        {
+            string s; cin >> s;
+            build(s, i);
+        }
+    }
+    cin >> n;
+    F(i, 1, n)
+    {
+        string s; cin >> s;
+        query(s);
+    }
+    return 0;
+}
+```
+
+## 0x05 AC 自动机
