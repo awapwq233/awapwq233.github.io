@@ -6,7 +6,7 @@ tags: [Time]
 math: true
 ---
 
-https://www.bilibili.com/video/BV1ib421E797
+[https://www.bilibili.com/video/BV1ib421E797](https://www.bilibili.com/video/BV1ib421E797)
 
 ### 随性而为的我 是个择敌而战的少年
 
