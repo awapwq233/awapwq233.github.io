@@ -118,7 +118,7 @@ math: true
 
 「你是……？」
 
-「An intense dissatisfaction in the world」
+「$\mathrm{An\ intense\ dissatisfaction\ in\ the\ world.}$」
 
 ## Eh...
 
@@ -126,7 +126,7 @@ math: true
 
 「是你……！」
 
-「And a compulsion to do something about it」
+「$\mathrm{And\ a\ compulsion\ to\ do\ something\ about\ it.}$」
 
 # 君は言って
 # 你如此说道。

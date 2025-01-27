@@ -106,7 +106,7 @@ $\Lambda$ 嗯 我会努力向前的 你也是一样
 
 ## 「君はその夢をもう一回」
 
-## 「你再做一次那个梦吧」
+## 「你再做一次[那个梦](https://awapwq233.github.io/posts/Night-Sky-Patrol-of-Tomorrow/)吧」
 
 $\Gamma$ 虽然心里已经碎成四分五裂的样子 你再做一次那个梦吧
 
