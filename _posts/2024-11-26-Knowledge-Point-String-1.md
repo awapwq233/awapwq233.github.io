@@ -320,7 +320,7 @@ int main()
 
 本题考查 KMP 的 `next` 数组的性质。
 
-![](/assets/img-2.png)
+![](/assets/Posts/Knowledge-Point-String-1/img-1.png)
 
 红色部分为最长的 `border`。观察绿色部分，由黄箭头所指，这两部分相同；又因为 `border` 是相同的前后缀，所以沿着黄色箭头这些部分都相等。这也就满足了题目中“自我复制”的要求。
 
