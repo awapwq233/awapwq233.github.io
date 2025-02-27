@@ -223,6 +223,8 @@ Line 19 转 Line 2，在虾龙圩站下了（好奇怪的名字hhh）
 
 大家都是彩框大佬，只有我是 w3 萌新。那怎么办，打叭！打了 **恋爱裁判**，嘿嘿。不过 2pc 只打出一首上分的 13。哎呀糖丸了属于是。
 
+![](/assets/Posts/Travel-Notes-1/img-16.jpg)
+
 ## 0x0b 晚饭
 
 选择困难症患者能选出来已经很不错了！选择了回转小火锅（其实是因为我去西安前的最后一顿晚饭就是回转小火锅导致我比较有好感）
@@ -241,3 +243,69 @@ Line 19 转 Line 2，在虾龙圩站下了（好奇怪的名字hhh）
 
 ## 0x0c 你是云、是海、是忘却，
 
+`yevxuayiuzveyfvyjhyfuzvjyevxigygjiuzyiiijyyijaiwygjiuzyeviiayguwvyyfibufyiididygvgiiyjudjzygviviygiiizyzvwiwyfjaiyyjjxucyfvzjiyevuigydiaicyfiuuayeviiuygijivyjihiwyfiijuyfufvxyivzjiygjwijcadbhagdcayhjuieyfviibyzvwiwyjicudyfvavbyfiyvvygijjdyfjauhydiaicauauyfjhuzydiaicyhjwivyfiivayeviiayeviuuyfvyiiygvwicyevuuyyhjuieyfufvdyfuxujyfuxjayfjwuiygijjdyfjvvxygubigydiaicauauyfjhuzyzvwiwyfjfiuyzvwiwygjiuzyivzjjyguavhyhjuieyzvwiwygiijbyiuzjfyfjvvyygizizyivzvayeviiayeviivyfvxjdygjhvgyhjuieyfjwvuygjjuzyzvwjuygiijbyhjwivyfiivayevuigyeviiayeviuuygjwixyiudifyfixibyfiiigyhuwugyfjaiiygiijbyfuyubyhvyiyyhjuieyevuvuyhvbvvyfjwuiygviviyhiyujcagxgbgjgxgbgjcaeefiyzvwiwyivfvhyfiijxygiijbyiuyueyevivuyfvjvgyeviixyevwjuyfvyiiyfufvxyhjwivyzvwiwyevxigygjiuzyfvxjdyfufvjyivxuwyivzihyivuuvyhjuieygjhvgyfiajjyzvwiwygiijbyfizjbyhiyvayfufvjyhjwjzyhjuieyfvyiiyfufvxyhjwivyzvwibyfvavbyhvvjxyfuzvjyjucjwyfiavwyiiaiwyiuiiayzvwiwygiijbyivzjiygvcubygjwijyiuhibyfiivayivzihyivzjjyguavhyhjuieyfufvdyfuxujyfuxjaydiaicauauygiijbyhijvjyfiiuvygvziayfiuuiydiaicygiijbyfjwuiyhvyueyjihiwyfizjbyhjjuvydiaicygiijbygidvdyeviiuyfiyvvyfjaiiyfvxvbyzvwiwygiijgyiiaifyfiuuayfufvxyfizivydiaicauauyevxigygjiuzygvcubygjwijyivzjjyguavhyfibjuyhjuieyfiyjzyfjvuaygjiuzyzvwiwygiijbyfizuuygjiuzygjxufygjhifygviviyhjuieyfjfiuyzvwiwyfvjvgyeviixyevwjuyevuuhyhjejzyevuueyjjvigyfjauhyzvwiwyfjhuzydiaicyevuiyygjiuzygiijbyfjwuiygjhufygubigygiyjcyjjijzyzvwiwygvcubygjwijyfjciwyfufvjygivvwygjwvuyzvwiwygjdugyivuuvyiiaiwyivzihydiaicauauyfjdiyyfjbiayzvwiwyfufvxyeviivyfueveyciaugyciaugyeviiaygjgvjyjjxucyfjvuayevivuyhjfizygiduhyzvwiwyeviiaygjgvjyjjxucyiuyueyevivuyiihuuyfvhvbyeviixyevwjuyevuuhyhjejzyevuueyjjvigyzvwiwygijiayevvufyevyvzyivxuwyivuuvyhugvvyfiyvvyevuigyfjauhydiaicauauyfjwuiyfjvjyyfiyvvyhjuieyfjwvayjjdibyeviiuyevyjxyhievgyevwjuygvziayfiuuiyhjuieyfvajgyfizuvydiaic`
+
+---
+
+## 0x0d 追问
+
+**Yo1o** 老师被震惊到了。她以为我只是在搞抽象，但是却看到了真实的人名。诶诶诶啊啊啊？😭
+
+那怎么办呀。那我就就只好把我的好多事情都说了出来。
+
+嗯，awa，辛苦了。
+
+`03:00` ✅ **Good-Night**
+
+---
+
+## 0x0e 早起
+
+`05:30` ✅ **Wake-Up**
+
+起床啦。很难想象我两个半小时的睡眠时间。哎太困了太困了。
+
+走路到地铁站！还是走了相当远的一段路，脚又开始疼了😭😭
+
+![](/assets/Posts/Travel-Notes-1/img-17.jpg)
+
+杭州地铁居然六点之前就开始运营了！于是立刻上车！
+
+`05:57` ✅ **Hangzhou Metro**
+
+`06:45` ✅ **杭州东站**
+
+时间很充足！决定去打印一个车票留作纪念🥰👍
+
+这次是 **复兴号-智能动车组**！总之就是很现代化的气息啦，座位还能看有人没人什么的，喜欢！而且速度随手跑了个 `300+ km/h`，气抖冷，我们山东什么时候能跑过 300 😭😭
+
+`08:33` ✅ **SHA Airport**
+
+哎上海大城市，飞机场旁边就是火车站😰。听 **Theresis** 指导，也是坐上了 **市域机场线**。这个相当于 SHA 到 PVG 的快线（哎哎大城市两个机场），速度更快当然票价也更贵，不过本质上还是地铁，长安通还在发力，嘿嘿。
+
+不是不是，出站换乘是人想出来的东西？要走 12min，好远。
+
+![](/assets/Posts/Travel-Notes-1/img-18.jpg)
+
+`09:34` ✅ **Shanghai Metro**
+
+坐上地铁了！这个等待显示也太对我的 xp 了吧！
+
+![](/assets/Posts/Travel-Notes-1/img-19.jpg)
+
+
+到了！
+
+🚁🚁 尊贵的 **Theresis** 正在地铁出口接我 🚁🚁
+
+---
+
+## 0x0f 上交
+
+先放一个图在这里
+
+![](/assets/Posts/Travel-Notes-1/img-20.jpg)
+
+紧跟着 **Theresis** 潜入了上海交通大学的校园。
+
+有了昨天的经验，今天骑电动车更得心应手了（
