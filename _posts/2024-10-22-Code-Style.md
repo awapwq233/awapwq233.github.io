@@ -276,7 +276,7 @@ constexpr double eps = 1e-7;
 常见的常量： 
 1. $e=\exp (1) = e^1$；
    
-2. $\cos \pi=-1\Rightarrow \pi = \arccos(-1)$；
+2. $\cos \pi=-1\Longrightarrow \pi = \arccos(-1)$；
    
 3. $\epsilon = 10^{-7}$ 因为 `double` 类型在运算时有浮点误差。
 
