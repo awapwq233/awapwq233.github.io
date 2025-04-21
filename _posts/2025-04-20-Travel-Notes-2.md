@@ -104,9 +104,13 @@ rank 9 但是榜二是 ai。闹麻了。
 
 （其实等餐的时候又开始打音游了）
 
-![](/assets/Posts/Travel-Notes-2/img-2.png)
+**DESTRUCTION 3,2,1** 喜提 `rks += 0.01`
+
+![](/assets/Posts/Travel-Notes-2/img-3.png)
 
 这个汉堡相当好吃。薯条也是现炸的，很脆！可乐就有点烂了，常温的小瓶百事可乐。总体来说还是相当不错的。
+
+![](/assets/Posts/Travel-Notes-2/img-2.png)
 
 在食堂和西工大本校的高中同学 **jxd** 见了一面。
 
