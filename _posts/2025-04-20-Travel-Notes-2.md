@@ -1,5 +1,5 @@
 ---
-title: 天梯赛比赛实况 —— 2025019游记
+title: 天梯赛比赛实况 —— 20250419游记
 date: 2025-04-20 00:00:00 +0800
 categories: [Travel Notes]
 tags: []
