@@ -61,12 +61,15 @@ F 是你妈交互？？？四次询问查 $x\in [1,5\times 10^9]$ 的整数，�
 呃，WA了。
 
 > **yth**：你他妈读入 $n$ 了吗？
+> 
 > Wrong Answer。
+> 
 > **yth**：你他妈保证每次询问 $x\leq n$ 了吗？
 
 我操！这个 $n$ 原来是有用的啊！按理来说确实一点用不用吧！
 
 > Wrong Answer。
+> 
 > **awa**：你他妈保证最终回答 $x^\prime \leq n$ 了吗？
 
 我操！这什么题！你妈的！整整吃了六发罚时，彻底不读题。红温了。
@@ -129,4 +132,4 @@ void update(int l, int r, int rt, int pos, int val)
 
 ## 0x03 补题
 
-下次再写。
+
