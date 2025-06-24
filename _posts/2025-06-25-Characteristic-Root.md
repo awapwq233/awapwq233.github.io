@@ -1,6 +1,6 @@
 ---
 title: 特征根法求数列通项的一个证明
-date: 2025-06-125 00:00:00 +0800
+date: 2025-06-25 00:00:00 +0800
 categories: [Math]
 tags: [Characteristic Root]
 math: true
